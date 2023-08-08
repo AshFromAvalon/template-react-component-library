@@ -5,6 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default [
   {
@@ -22,6 +23,7 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
       terser(),
       resolve(),
       commonjs(),

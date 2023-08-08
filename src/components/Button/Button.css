@@ -6,7 +6,7 @@
 }
 
 [data-button~="variant:primary"] {
-  background-color: #000000;
+  background-color: red;
   color: #ffffff;
 }
 
