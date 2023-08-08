@@ -1,9 +1,13 @@
 {
-  "name": "template-react-component-library",
+  "name": "@ashfromaval/template-react-component-library",
   "version": "0.0.1",
   "description": "A simple template for a custom React component library",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ashfromavalon"
+  },
   "scripts": {
-    "rollup": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "rollup -c"
   },
   "author": "Alex Eagleson",
   "license": "ISC",
