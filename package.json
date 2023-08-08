@@ -1,0 +1,30 @@
+{
+  "name": "template-react-component-library",
+  "version": "0.0.1",
+  "description": "A simple template for a custom React component library",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "author": "Alex Eagleson",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/react": "^18.2.19",
+    "react": "^18.2.0",
+    "rollup": "^3.27.2",
+    "rollup-plugin-dts": "^5.3.1",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "tslib": "^2.6.1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
