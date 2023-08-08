@@ -1,12 +1,18 @@
 import React from "react";
 
+import "./Button.css";
+
 export interface ButtonProps extends React.ComponentProps<"button"> {
   children: React.ReactNode;
+  variant?: "primary" | "secondary";
 }
-
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children }) => {
-    return <button>{children}</button>;
+  ({ variant = "primary", children, ...props }, ref) => {
+    return (
+      <button data-button={`variant:${variant}`} ref={ref} {...props}>
+        {children}
+      </button>
+    );
   }
 );
 

@@ -1,0 +1,16 @@
+[data-button] {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 1px solid #000000;
+}
+
+[data-button~="variant:primary"] {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+[data-button~="variant:secondary"] {
+  background-color: #ffffff;
+  color: #000000;
+}
