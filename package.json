@@ -2,6 +2,12 @@
   "name": "@ashfromavalon/template-react-component-library",
   "version": "1.0.1",
   "description": "A simple template for a custom React component library",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "@ashfromavalon:registry": "https://npm.pkg.github.com"
   },
@@ -12,6 +18,10 @@
   },
   "author": "Alex Eagleson",
   "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
@@ -36,14 +46,5 @@
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0"
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts"
+  }
 }

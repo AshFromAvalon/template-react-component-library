@@ -1,28 +1,24 @@
 import React from "react";
+import "./Tabs.css";
 import { TabId, TabTitle } from "./types";
 
 export interface TabProps {
   activeTab: TabId;
   id: TabId;
   title: TabTitle;
+  activeColor?: string;
   onClick: (id: TabId) => void;
-  activeTabStyle?: string;
-  tabStyle?: string;
 }
 
-const Tab = ({
-  activeTab,
-  id,
-  title,
-  onClick,
-  activeTabStyle,
-  tabStyle,
-}: TabProps) => {
+const Tab = ({ activeTab, id, title, activeColor, onClick }: TabProps) => {
   const isActive = activeTab === id;
-  const tabClassName = `${isActive ? activeTabStyle : ""} ${tabStyle || ""}`;
 
   return (
-    <li className={tabClassName} onClick={() => onClick(id)}>
+    <li
+      className={`tab ${isActive && "active-tab"}`}
+      style={activeColor ? { borderBottomColor: activeColor } : {}}
+      onClick={() => onClick(id)}
+    >
       {title}
     </li>
   );

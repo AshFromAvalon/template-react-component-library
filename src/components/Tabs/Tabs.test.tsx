@@ -49,32 +49,14 @@ describe("Tabs", () => {
     );
   });
 
-  test("have the correct style for tab", () => {
-    render(<Tabs data={mockTabs} tabStyle="my-tab-style" />);
-
-    const tabItems = screen.getAllByRole("listitem");
-
-    tabItems.forEach((item) => {
-      expect(item).toHaveClass("my-tab-style");
-    });
-  });
-
-  test("have the correct style for tabList", () => {
-    render(<Tabs data={mockTabs} containerStyle="my-container-style" />);
-
-    const tabList = screen.getByRole("list", { name: /tabs/i });
-
-    expect(tabList).toHaveClass("my-container-style");
-  });
-
   test("have the correct style for active tab", async () => {
-    render(<Tabs data={mockTabs} activeTabStyle="active" />);
+    render(<Tabs data={mockTabs} />);
 
     const tabList = screen.getByRole("list", { name: /tabs/i });
     const tabOne = within(tabList).getByText("Tab One");
 
     await user.click(tabOne);
 
-    expect(tabOne).toHaveClass("active");
+    expect(tabOne).toHaveClass("active-tab");
   });
 });

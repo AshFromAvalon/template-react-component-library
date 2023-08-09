@@ -1,27 +1,15 @@
 import React, { useState } from "react";
+import "./Tabs.css";
 import Tab from "./Tab";
 import { TabId, TabsData } from "./types";
 
 export interface TabsProps {
   data: Array<TabsData>;
-  containerStyle?: string;
-  tabStyle?: string;
-  activeTabStyle?: string;
+  activeColor?: string;
 }
 
-const Tabs = ({
-  data,
-  containerStyle,
-  tabStyle,
-  activeTabStyle,
-}: TabsProps) => {
+const Tabs = ({ data, activeColor }: TabsProps) => {
   const [activeTab, setActiveTab] = useState<TabId>(data[0].id);
-
-  const styles = {
-    container: containerStyle,
-    tab: tabStyle,
-    activeTab: activeTabStyle,
-  };
 
   const OnClickTabItem = (tab: TabId) => {
     setActiveTab(tab);
@@ -29,7 +17,7 @@ const Tabs = ({
 
   return (
     <>
-      <ol aria-label="tabs" className={styles.container}>
+      <ol aria-label="tabs" className={`tab-container`}>
         {/* Tab ids */}
         {data.map((tab) => {
           const { id, title } = tab;
@@ -37,12 +25,11 @@ const Tabs = ({
           return (
             <Tab
               activeTab={activeTab}
+              activeColor={activeColor}
               key={id}
               id={id}
               title={title}
               onClick={OnClickTabItem}
-              tabStyle={styles.tab}
-              activeTabStyle={styles.activeTab}
             />
           );
         })}
