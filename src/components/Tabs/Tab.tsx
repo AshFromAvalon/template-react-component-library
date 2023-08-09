@@ -19,9 +19,7 @@ const Tab = ({
   tabStyle,
 }: TabProps) => {
   const isActive = activeTab === id;
-  const tabClassName = tabStyle
-    ? `${tabStyle} ${isActive ? activeTabStyle : ""}`
-    : "";
+  const tabClassName = `${isActive ? activeTabStyle : ""} ${tabStyle || ""}`;
 
   return (
     <li className={tabClassName} onClick={() => onClick(id)}>

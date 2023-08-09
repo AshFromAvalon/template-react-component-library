@@ -29,7 +29,7 @@ const Tabs = ({
 
   return (
     <>
-      <ol className={styles.container}>
+      <ol aria-label="tabs" className={styles.container}>
         {/* Tab ids */}
         {data.map((tab) => {
           const { id, title } = tab;
